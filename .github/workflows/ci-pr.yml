@@ -30,6 +30,9 @@ jobs:
   bridgecrew-scan:
     uses: indigo-tangerine/shared-workflows/.github/workflows/bridgecrew.yml@main
 
+  tfsec-pr-scan:
+    uses: indigo-tangerine/shared-workflows/.github/workflows/tfsec-pr.yml@main
+
   tfm-docs:
     runs-on: ubuntu-latest
     steps:
