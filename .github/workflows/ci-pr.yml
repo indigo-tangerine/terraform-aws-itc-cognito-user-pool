@@ -1,8 +1,7 @@
 name: continuous-integration
 on:
-  push:
-    branches-ignore:
-      - main
+  pull_request:
+    branches: ["main"]
 
 jobs:
   tfm-validate:
@@ -30,3 +29,19 @@ jobs:
 
   bridgecrew-scan:
     uses: indigo-tangerine/shared-workflows/.github/workflows/bridgecrew.yml@main
+
+  tfm-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v0.11.0
+        with:
+          working-dir: .
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
+          indention: 3
+          git-commit-message: "[tfm-docs][skip ci] - updating terraform docs"
