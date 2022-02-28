@@ -30,6 +30,7 @@ resource "aws_route53_record" "auth" {
     # This zone_id is fixed
     zone_id = "Z2FDTNDATAQYW2"
   }
+  #bridgecrew:skip=CKV2_AWS_23:Route53 A Record has Attached Resource
 }
 
 resource "aws_route53_record" "dummy" {
@@ -39,4 +40,6 @@ resource "aws_route53_record" "dummy" {
   zone_id = data.aws_route53_zone.main[0].zone_id
   ttl     = "300"
   records = ["1.2.3.4"]
+
+  #bridgecrew:skip=CKV2_AWS_23:Route53 A Record has Attached Resource
 }
