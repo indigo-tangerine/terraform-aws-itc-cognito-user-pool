@@ -1,18 +1,18 @@
 # Terraform Module - Cognito User Pools
 
-[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ohpensource/terraform-aws-ohp-cognito-user-pool/continuous-delivery)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/indigo-tangerine/terraform-aws-ohp-cognito-user-pool/continuous-delivery)
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ohpensource/terraform-aws-ohp-cognito-user-pool)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/indigo-tangerine/terraform-aws-ohp-cognito-user-pool)
 
 ## Maintainer
 
-* Platform Services
+* Indigo Tangerine
 
 ## Author
 
-* Rupert Broad (based on https://github.com/lgallard/terraform-aws-cognito-user-pool)
+* Rupert Broad (based on <https://github.com/lgallard/terraform-aws-cognito-user-pool>)
 
 ## Description
 
@@ -21,9 +21,6 @@ Creates a Cognito User Pool. If custom DNS name for the authentication endpoint 
 Cognito Identity Providers (IdPs), e.g. Azure can be added using the terraform-aws-ohp-cognito-idp module.
 
 ## Documentation
-
-Describe how to use your module here.
-[confluence](https://ohpendev.atlassian.net/wiki/spaces/CCE/pages/2062320795/Terraform+Modules)
 
 ## Usage
 
@@ -118,7 +115,7 @@ No modules.
 | <a name="input_lambda_config_post_confirmation"></a> [lambda\_config\_post\_confirmation](#input\_lambda\_config\_post\_confirmation) | A post-confirmation AWS Lambda trigger | `string` | `""` | no |
 | <a name="input_lambda_config_pre_authentication"></a> [lambda\_config\_pre\_authentication](#input\_lambda\_config\_pre\_authentication) | A pre-authentication AWS Lambda trigger | `string` | `""` | no |
 | <a name="input_lambda_config_pre_sign_up"></a> [lambda\_config\_pre\_sign\_up](#input\_lambda\_config\_pre\_sign\_up) | A pre-registration AWS Lambda trigger | `string` | `""` | no |
-| <a name="input_lambda_config_pre_token_generation"></a> [lambda\_config\_pre\_token\_generation](#input\_lambda\_config\_pre\_token\_generation) | Allow to customize identity token claims before token generation | `string` | `""` | no |
+| <a name="input_lambda_config_pre_token_generation"></a> [lambda\_config\_pre\_token\_generation](#input\_lambda\_config\_pre\_token\_generation) | Allow to customize identity token claims before token generation | `string` | `null` | no |
 | <a name="input_lambda_config_user_migration"></a> [lambda\_config\_user\_migration](#input\_lambda\_config\_user\_migration) | The user migration Lambda config type | `string` | `""` | no |
 | <a name="input_lambda_config_verify_auth_challenge_response"></a> [lambda\_config\_verify\_auth\_challenge\_response](#input\_lambda\_config\_verify\_auth\_challenge\_response) | Verifies the authentication challenge response | `string` | `""` | no |
 | <a name="input_mfa_configuration"></a> [mfa\_configuration](#input\_mfa\_configuration) | Set to enable multi-factor authentication. Must be one of the following values (ON, OFF, OPTIONAL) | `string` | `"OFF"` | no |
@@ -180,4 +177,3 @@ No modules.
 | <a name="output_resource_servers_scope_identifiers"></a> [resource\_servers\_scope\_identifiers](#output\_resource\_servers\_scope\_identifiers) | A list of all scopes configured in the format identifier/scope\_name |
 
 <!--- END_TF_DOCS --->
-.

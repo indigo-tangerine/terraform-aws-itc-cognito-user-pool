@@ -209,7 +209,7 @@ variable "lambda_config_pre_sign_up" {
 variable "lambda_config_pre_token_generation" {
   description = "Allow to customize identity token claims before token generation"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "lambda_config_user_migration" {
