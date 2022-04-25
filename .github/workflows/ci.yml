@@ -28,8 +28,5 @@ jobs:
           tflint --init
           tflint -f compact
 
-  bridgecrew-scan:
-    uses: indigo-tangerine/shared-workflows/.github/workflows/bridgecrew.yml@main
-
   tfsec-scan:
-    uses: indigo-tangerine/shared-workflows/.github/workflows/tfsec.yml@main
+    uses: indigo-tangerine/shared-workflows/.github/workflows/tfm-security.yml@main
