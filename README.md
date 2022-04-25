@@ -22,11 +22,11 @@ Cognito Identity Providers (IdPs), e.g. Azure can be added using the terraform-a
 
 ## Documentation
 
-## Usage
-
 See examples folder
 
-<!--- BEGIN_TF_DOCS --->
+## Usage
+
+<!-- BEGIN_TF_DOCS -->
 ### Requirements
 
 | Name | Version |
@@ -175,5 +175,4 @@ No modules.
 | <a name="output_id"></a> [id](#output\_id) | The id of the user pool |
 | <a name="output_last_modified_date"></a> [last\_modified\_date](#output\_last\_modified\_date) | The date the user pool was last modified |
 | <a name="output_resource_servers_scope_identifiers"></a> [resource\_servers\_scope\_identifiers](#output\_resource\_servers\_scope\_identifiers) | A list of all scopes configured in the format identifier/scope\_name |
-
-<!--- END_TF_DOCS --->
+<!-- END_TF_DOCS -->
