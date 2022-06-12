@@ -330,6 +330,7 @@ variable "sms_verification_message" {
 variable "tags" {
   description = "(Required) A mapping of tags to assign to the User Pool"
   type        = map(string)
+  default     = {}
 }
 
 # user_pool_add_ons
