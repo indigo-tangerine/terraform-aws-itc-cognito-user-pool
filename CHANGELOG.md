@@ -1,3 +1,9 @@
+# :confetti_ball: 1.0.3 (2022-06-12T20:30:15.032Z)
+- - -
+## :newspaper: Others
+* update file mode and tags optional
+- - -
+- - -
 # :confetti_ball: 1.0.1 (2021-11-18T15:02:34.020Z)
 - - -
 ## :bug: Fixes

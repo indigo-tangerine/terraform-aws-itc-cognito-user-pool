@@ -162,7 +162,7 @@ variable "email_configuration_from_email_address" {
 variable "lambda_config" {
   description = "A container for the AWS Lambda triggers associated with the user pool"
   type        = map(any)
-  default     = null
+  default     = {}
 }
 
 variable "lambda_config_create_auth_challenge" {
@@ -209,7 +209,7 @@ variable "lambda_config_pre_sign_up" {
 variable "lambda_config_pre_token_generation" {
   description = "Allow to customize identity token claims before token generation"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "lambda_config_user_migration" {
