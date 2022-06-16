@@ -58,7 +58,7 @@ resource "aws_cognito_user_pool" "pool" {
 
   # lambda_config
   dynamic "lambda_config" {
-    for_each = var.lambda_config == null && length(join("", values(local.lambda_config[0]))) == 0 ? [] : local.lambda_config
+    for_each = var.lambda_config == {} && length(join("", values(local.lambda_config[0]))) == 0 ? [] : local.lambda_config
     content {
       create_auth_challenge          = lookup(lambda_config.value, "create_auth_challenge")
       custom_message                 = lookup(lambda_config.value, "custom_message")
@@ -261,7 +261,7 @@ locals {
   }
 
   # If lambda_config is NOT null
-  lambda_config_not_null = var.lambda_config == null ? local.lambda_config_is_null : {
+  lambda_config_not_null = var.lambda_config == {} ? local.lambda_config_is_null : {
 
     create_auth_challenge          = lookup(var.lambda_config, "create_auth_challenge", null) == null ? var.lambda_config_create_auth_challenge : lookup(var.lambda_config, "create_auth_challenge")
     custom_message                 = lookup(var.lambda_config, "custom_message", null) == null ? var.lambda_config_custom_message : lookup(var.lambda_config, "custom_message")
@@ -276,7 +276,7 @@ locals {
   }
 
   # Return the default values
-  lambda_config = var.lambda_config == null ? [local.lambda_config_is_null] : [local.lambda_config_not_null]
+  lambda_config = var.lambda_config == {} ? [local.lambda_config_is_null] : [local.lambda_config_not_null]
 
   # password_policy
   # If no password_policy is provided, build a password_policy using the default values

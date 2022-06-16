@@ -1,7 +1,10 @@
-name: continuous-integration-pr
+name: continuous-integration-fb
+
 on:
-  pull_request:
-    branches: ["main"]
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches-ignore:
+      - "main"
 
 jobs:
   # CALL WORKFLOW tfm-validate-plan code validation and lint
@@ -15,10 +18,3 @@ jobs:
     uses: indigo-tangerine/shared-workflows/.github/workflows/tfm-security.yml@main
     with:
       terraform-dir: "."
-
-  # CALL WORKFLOW tfm-docs update terraform documentation
-  tfm-docs:
-    uses: indigo-tangerine/shared-workflows/.github/workflows/tfm-docs.yml@main
-    needs: [validate-iac, security-scan]
-    with:
-      working-dir: "."
